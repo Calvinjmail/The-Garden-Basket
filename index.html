@@ -79,6 +79,36 @@
         Order Now
     </button>
 </section>
+        <section id="order-form" style="display: none;">
+
+    <h2>📋 Your Details</h2>
+
+    <p>Please enter your details and we'll contact you to arrange pickup.</p>
+
+    <form onsubmit="placeOrder(event)">
+
+        <label for="name">Name</label><br>
+        <input type="text" id="name" required>
+
+        <br><br>
+
+        <label for="phone">Mobile</label><br>
+        <input type="tel" id="phone" required>
+
+        <br><br>
+
+        <label for="message">Anything else?</label><br>
+        <textarea id="message"></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Send Order
+        </button>
+
+    </form>
+
+</section>
     </main>
 
     <footer>
