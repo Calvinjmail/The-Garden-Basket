@@ -32,14 +32,53 @@
             </p>
         </section>
 
-        <section>
-            <h2>🌱 Available Now</h2>
+       <section>
+    <h2>🌱 Available Now</h2>
 
-            <p>
-                Our current produce will appear here.
-            </p>
-        </section>
+    <div class="products">
 
+        <div class="product">
+            <h3>🍋 Eureka Lemons</h3>
+            <p>Fresh from our lemon tree.</p>
+            <p class="price">$1 each</p>
+            <button onclick="addToBasket('Eureka Lemons', 1)">
+                Add to Basket
+            </button>
+        </div>
+
+        <div class="product">
+            <h3>🫚 Fresh Ginger</h3>
+            <p>Freshly harvested from the garden.</p>
+            <p class="price">$5 per 375g</p>
+            <button onclick="addToBasket('Fresh Ginger', 5)">
+                Add to Basket
+            </button>
+        </div>
+
+        <div class="product">
+            <h3>🌿 Fresh Basil</h3>
+            <p>Freshly picked from the garden.</p>
+            <p class="price">$3 per bunch</p>
+            <button onclick="addToBasket('Fresh Basil', 3)">
+                Add to Basket
+            </button>
+        </div>
+
+    </div>
+</section>
+<section id="basket">
+    <h2>🧺 Your Basket</h2>
+
+    <div id="basket-items">
+        <p>Your basket is empty.</p>
+    </div>
+
+    <h3>Total: $<span id="basket-total">0</span></h3>
+
+    <button onclick="showOrderForm()">
+        Order Now
+    </button>
+</section>
     </main>
 
     <footer>
