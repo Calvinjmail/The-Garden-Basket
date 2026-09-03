@@ -1,4 +1,4 @@
-const orderEmail = "YOUR_EMAIL_HERE";
+const orderEmail = "thegardenbasket2026@gmail.com";
 
 let basket = [];
 
