@@ -3,15 +3,31 @@ let basket = [];
 
 function addToBasket(name, price) {
 
-    basket.push({
-        name: name,
-        price: price
+    const existingItem = basket.find(function(item) {
+        return item.name === name;
     });
+
+    if (existingItem) {
+
+        existingItem.quantity += 1;
+        existingItem.total += price;
+
+    } else {
+
+        basket.push({
+            name: name,
+            price: price,
+            quantity: 1,
+            total: price
+        });
+    }
 
     updateBasket();
 
     document.getElementById("basket").scrollIntoView({
         behavior: "smooth"
+    });
+}
     });
 }
 
