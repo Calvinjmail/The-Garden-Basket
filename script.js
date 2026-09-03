@@ -51,11 +51,13 @@ function updateBasket() {
 
     basket.forEach(function(item, index) {
 
-        total += item.price;
+        total += item.total;
 
         basketItems.innerHTML += `
             <p>
-                ${item.name} — $${item.price}
+                ${item.name} × ${item.quantity}
+                — $${item.total.toFixed(2)}
+
                 <button onclick="removeFromBasket(${index})">
                     Remove
                 </button>
