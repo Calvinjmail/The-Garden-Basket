@@ -1,3 +1,4 @@
+const orderEmail = "thegardenbasket2026@gmail.com";
 let basket = [];
 
 function addToBasket(name, price) {
@@ -74,15 +75,48 @@ function showOrderForm() {
     });
 }
 
-
 function placeOrder(event) {
 
     event.preventDefault();
 
     const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-    alert(
-        "Thanks " + name +
-        "! Your order has been recorded."
-    );
+    let orderDetails = "";
+
+    basket.forEach(function(item) {
+        orderDetails +=
+            item.name +
+            " × " +
+            item.quantity +
+            " - $" +
+            item.total.toFixed(2) +
+            "\n";
+    });
+
+    let total = 0;
+
+    basket.forEach(function(item) {
+        total += item.total;
+    });
+
+    const subject = "New Garden Basket Order";
+
+    const body =
+        "NEW GARDEN BASKET ORDER\n\n" +
+        "Customer: " + name + "\n" +
+        "Mobile: " + phone + "\n" +
+        "Email: " + email + "\n\n" +
+        "ORDER:\n" +
+        orderDetails +
+        "\nTOTAL: $" + total.toFixed(2) +
+        "\n\nCUSTOMER MESSAGE:\n" +
+        message;
+
+    window.location.href =
+        "mailto:" + orderEmail +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
 }
