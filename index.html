@@ -32,92 +32,134 @@
             </p>
         </section>
 
-       <section>
-    <h2>🌱 Available Now</h2>
 
-    <div class="products">
+        <section>
+            <h2>🌱 Available Now</h2>
 
-        <div class="product">
-            <h3>🍋 Eureka Lemons</h3>
-            <p>Fresh from our lemon tree.</p>
-            <p class="price">$1 each</p>
-            <button onclick="addToBasket('Eureka Lemons', 1)">
-                Add to Basket
+            <div class="products">
+
+                <div class="product">
+                    <h3>🍋 Eureka Lemons</h3>
+                    <p>Fresh from our lemon tree.</p>
+                    <p class="price">$1 each</p>
+
+                    <button onclick="addToBasket('Eureka Lemons', 1)">
+                        Add to Basket
+                    </button>
+                </div>
+
+
+                <div class="product">
+                    <h3>🫚 Fresh Ginger</h3>
+                    <p>Freshly harvested from the garden.</p>
+                    <p class="price">$5 per 375g</p>
+
+                    <button onclick="addToBasket('Fresh Ginger', 5)">
+                        Add to Basket
+                    </button>
+                </div>
+
+
+                <div class="product">
+                    <h3>🌿 Fresh Basil</h3>
+                    <p>Freshly picked from the garden.</p>
+                    <p class="price">$3 per bunch</p>
+
+                    <button onclick="addToBasket('Fresh Basil', 3)">
+                        Add to Basket
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="basket">
+
+            <h2>🧺 Your Basket</h2>
+
+            <div id="basket-items">
+                <p>Your basket is empty.</p>
+            </div>
+
+            <h3>
+                Total: $<span id="basket-total">0</span>
+            </h3>
+
+            <button onclick="showOrderForm()">
+                Order Now
             </button>
-        </div>
 
-        <div class="product">
-            <h3>🫚 Fresh Ginger</h3>
-            <p>Freshly harvested from the garden.</p>
-            <p class="price">$5 per 375g</p>
-            <button onclick="addToBasket('Fresh Ginger', 5)">
-                Add to Basket
-            </button>
-        </div>
+        </section>
 
-        <div class="product">
-            <h3>🌿 Fresh Basil</h3>
-            <p>Freshly picked from the garden.</p>
-            <p class="price">$3 per bunch</p>
-            <button onclick="addToBasket('Fresh Basil', 3)">
-                Add to Basket
-            </button>
-        </div>
 
-    </div>
-</section>
-<section id="basket">
-    <h2>🧺 Your Basket</h2>
-
-    <div id="basket-items">
-        <p>Your basket is empty.</p>
-    </div>
-
-    <h3>Total: $<span id="basket-total">0</span></h3>
-
-    <button onclick="showOrderForm()">
-        Order Now
-    </button>
-</section>
         <section id="order-form" style="display: none;">
 
-    <h2>📋 Your Details</h2>
+            <h2>📋 Your Details</h2>
 
-    <p>Please enter your details and we'll contact you to arrange pickup.</p>
+            <p>
+                Please enter your details and we'll contact you to arrange pickup.
+            </p>
 
-    <form onsubmit="placeOrder(event)">
+            <form onsubmit="placeOrder(event)">
 
-        <label for="name">Name</label><br>
-        <input type="text" id="name" required>
+                <label for="name">Name</label><br>
 
-        <br><br>
+                <input
+                    type="text"
+                    id="name"
+                    required
+                >
 
-        <label for="phone">Mobile</label><br>
-        <input type="tel" id="phone" required>
+                <br><br>
 
-        <br><br>
-<label for="email">Email</label><br>
-<input type="email" id="email" required>
 
-<br><br>
-        <label for="message">Anything else?</label><br>
-        <textarea id="message"></textarea>
+                <label for="phone">Mobile</label><br>
 
-        <br><br>
+                <input
+                    type="tel"
+                    id="phone"
+                    required
+                >
 
-        <button type="submit">
-            Send Order
-        </button>
+                <br><br>
 
-    </form>
 
-</section>
+                <label for="email">Email</label><br>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+                <br><br>
+
+
+                <label for="message">Anything else?</label><br>
+
+                <textarea id="message"></textarea>
+
+                <br><br>
+
+
+                <button type="submit">
+                    Send Order
+                </button>
+
+            </form>
+
+        </section>
+
     </main>
+
 
     <footer>
         <p>The Garden Basket · Medowie</p>
     </footer>
-<script src="script.js"></script>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
