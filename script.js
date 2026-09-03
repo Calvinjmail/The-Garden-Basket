@@ -138,3 +138,29 @@ function placeOrder(event) {
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 }
+    });
+
+    let total = 0;
+
+    basket.forEach(function(item) {
+        total += item.total;
+    });
+
+    const subject = "New Garden Basket Order";
+
+    const body =
+        "NEW GARDEN BASKET ORDER\n\n" +
+        "Customer: " + name + "\n" +
+        "Mobile: " + phone + "\n" +
+        "Email: " + email + "\n\n" +
+        "ORDER:\n" +
+        orderDetails +
+        "\nTOTAL: $" + total.toFixed(2) +
+        "\n\nCUSTOMER MESSAGE:\n" +
+        message;
+
+    window.location.href =
+        "mailto:" + orderEmail +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+}
